@@ -33,14 +33,17 @@ jobs:
           mv "$file.min" "$file"
         done
 
-    # Compress Videos (High Quality)
+     # Compress Videos in /public/assets/videos (High Quality)
     - name: Compress Videos (High Quality)
       run: |
         sudo apt-get update
         sudo apt-get install -y ffmpeg
-        find . -type f \( -iname "*.mp4" -o -iname "*.mov" \) | while read -r file; do
-          ffmpeg -i "$file" -vcodec libx264 -crf 20 -preset slow -acodec aac -b:a 192k "compressed_$file"
-          mv "compressed_$file" "$file"
+        find ./assets/video -type f \( -iname "*.mp4" -o -iname "*.mov" \) | while read -r file; do
+          dir=$(dirname "$file")
+          base=$(basename "$file")
+          temp_file="$dir/temp_$base"
+          ffmpeg -i "$file" -vcodec libx264 -crf 20 -preset slow -acodec aac -b:a 192k "$temp_file"
+          mv "$temp_file" "$file"
         done
 
     # Deploy to GitHub Pages
