@@ -1,0 +1,46 @@
+name: Compress & Deploy GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    # Minify HTML, CSS, JS
+    - name: Minify HTML, CSS, and JS
+      run: |
+        npm install -g terser clean-css-cli html-minifier
+        find . -name "*.js" -exec terser {} -o {} \;
+        find . -name "*.css" -exec cleancss -o {} {} \;
+        find . -name "*.html" -exec html-minifier --collapse-whitespace --remove-comments -o {} {} \;
+
+    # Optimize Images (lossless or high-quality lossy)
+    - name: Compress Images (High Quality)
+      run: |
+        npm install -g imagemin-cli imagemin-mozjpeg imagemin-pngquant
+        find . -type f -iname "*.jpg" -exec imagemin {} --plugin=mozjpeg --quality=85 --out-dir=$(dirname {}) \;
+        find . -type f -iname "*.jpeg" -exec imagemin {} --plugin=mozjpeg --quality=85 --out-dir=$(dirname {}) \;
+        find . -type f -iname "*.png" -exec imagemin {} --plugin=pngquant --quality=80-100 --out-dir=$(dirname {}) \;
+
+    # Compress Videos (High Quality)
+    - name: Compress Videos (High Quality)
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y ffmpeg
+        find . -type f \( -iname "*.mp4" -o -iname "*.mov" \) | while read -r file; do
+          ffmpeg -i "$file" -vcodec libx264 -crf 20 -preset slow -acodec aac -b:a 192k "compressed_$file"
+          mv "compressed_$file" "$file"
+        done
+
+    # Deploy to GitHub Pages
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v4
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: .
