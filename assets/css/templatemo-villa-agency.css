@@ -1305,6 +1305,10 @@ body {
   overflow-x: hidden;
 }
 @media (max-width: 992px) {
+  .main-banner .caption {
+    left: 0;
+    padding: 1rem;
+  }
   .introduce {
     margin-top: -20rem;
     padding: 1rem 1rem;
