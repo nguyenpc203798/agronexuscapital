@@ -101,7 +101,7 @@ hgroup {
 html,
 body {
   font-family: "Roboto", sans-serif;
-  font-weight: 500;
+  font-weight: 400;
   -ms-text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -135,7 +135,7 @@ img {
 html,
 body {
   font-family: "Roboto", sans-serif;
-  font-weight: 500;
+  font-weight: 400;
 }
 ::selection {
   background: #0071f8;
@@ -755,85 +755,135 @@ body {
     padding-right: 0px !important;
   }
 }
-.main-banner {
-  position: relative;
-  max-height: 100%;
-  overflow: hidden;
-  margin-bottom: -7px;
-}
-#bg-video {
-  min-width: 100%;
-  min-height: 60rem;
-  max-width: 100%;
-  max-height: 60rem;
-  object-fit: cover;
-  z-index: -1;
-}
-#bg-video::-webkit-media-controls {
-  display: none !important;
-}
-.video-overlay {
-  position: absolute;
-  background-color: rgb(22 81 10 / 50%);
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  width: 100%;
-}
-.main-banner .caption {
-  position: absolute;
-  top: 35%;
-  left: 15%;
-  transform: translateY(-50%);
-}
-.main-banner .caption h6 {
+
+
+.main-banner .item {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 310px 20% 320px 20%;
   margin-top: 0;
-  font-size: 15px;
-  text-transform: uppercase;
-  font-weight: 600;
-  color: #fff;
-  letter-spacing: 1px;
+  height: 50rem;
 }
-.main-banner .caption h2 {
-  margin-top: 20px;
-  margin-bottom: 20px;
-  font-size: 50px;
-  text-transform: uppercase;
-  font-weight: 800;
-  color: #fff;
-  letter-spacing: 1px;
+.main-banner .item-1 {
+  background-image: url(../images/banner/canhdong1.jpg);
 }
-.main-banner .caption h2 em {
-  font-style: normal;
-  color: #f5a425;
-  font-weight: 900;
+.main-banner .item-2 {
+  background-image: url(../images/banner/donglua.webp);
 }
-.main-banner .caption p {
-  color: #fff;
-  font-size: 14px;
-  max-width: 570px;
+.main-banner .item-3 {
+  background-image: url(../images/banner/Picture1.png);
 }
-.main-banner .caption .main-button-red {
-  margin-top: 30px;
-}
-@media screen and (max-width: 767px) {
-  .main-banner .caption h6 {
-    font-weight: 500;
-  }
-  .main-banner .caption h2 {
-    font-size: 36px;
-  }
-}
-.introduce {
-  margin-top: -13rem;
-  z-index: 100;
-  position: relative;
+
+.main-banner .item span.category {
   background-color: #fff;
-  border-radius: 2rem;
-  box-shadow: 0 0 20px rgb(130 130 130);
-  padding: 3rem 3rem;
+  color: #1e1e1e;
+  font-size: 16px;
+  font-weight: 500;
+  text-transform: capitalize;
+  padding: 6px 15px;
+  display: inline-block;
+  margin-bottom: 30px;
 }
+.main-banner .item span.category em {
+  font-style: normal;
+  color: #1e6c39;
+}
+.main-banner .item h2 {
+  font-size: 62px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #fff;
+  line-height: 72px;
+  width: 50%;
+  margin-bottom: 0;
+  text-shadow: 2px 2px 4px #000;
+}
+@media (max-width: 1600px) {
+  .main-banner .item h2 {
+    font-size: 50px;
+    line-height: 60px;
+    width: 60%;
+  }
+}
+@media (max-width: 992px) {
+  .main-banner .item h2 {
+    font-size: 42px;
+    line-height: 52px;
+    width: 70%;
+  }
+}
+@media (max-width: 768px) {
+  .main-banner .item h2 {
+    font-size: 34px;
+    line-height: 44px;
+    width: 80%;
+  }
+}
+@media (max-width: 576px) {
+  .main-banner .item h2 {
+    font-size: 28px;
+    line-height: 38px;
+    width: 90%;
+  }
+}
+.main-banner .owl-dots {
+  position: absolute;
+  bottom: 60px;
+  left: 20%;
+}
+.main-banner .owl-dots .owl-dot {
+  width: 10px;
+  height: 10px;
+  background-color: #fff;
+  border-radius: 50%;
+  margin-right: 10px;
+  transition: all 0.5s;
+}
+.main-banner .owl-dots .active {
+  background-color: #1e6c39;
+}
+.main-banner .owl-nav {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  transform: translateY(-50px);
+}
+.main-banner .owl-nav .owl-prev i,
+.main-banner .owl-nav .owl-next i {
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  font-size: 24px;
+  display: inline-block;
+  color: #fff;
+  background-color: rgb(255 255 255 / 0.2);
+  border-radius: 50%;
+  opacity: 1;
+  transition: all 0.3s;
+}
+.main-banner .owl-nav .owl-prev i {
+  position: absolute;
+  left: 45px;
+}
+.main-banner .owl-nav .owl-next i {
+  position: absolute;
+  right: 45px;
+}
+.main-banner .owl-nav .owl-prev i:hover,
+.main-banner .owl-nav .owl-next i:hover {
+  opacity: 1;
+  background-color: rgb(255 255 255 / 0.5);
+}
+
+/* 
+---------------------------------------------
+banner
+--------------------------------------------- 
+*/
+
+
+
 .featured .left-image {
   position: relative;
 }
@@ -1019,7 +1069,6 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   padding: 110px 0;
-  text-align: center;
 }
 .page-heading span {
   background-color: #fff;
@@ -1036,7 +1085,7 @@ body {
   color: #1e1e1e;
 }
 .page-heading h3 {
-  font-size: 40px;
+  font-size: 48px;
   font-weight: 900;
   text-transform: uppercase;
 }
@@ -1305,18 +1354,6 @@ body {
   overflow-x: hidden;
 }
 @media (max-width: 992px) {
-  .main-banner .caption {
-    left: 0;
-    padding: 1rem;
-  }
-  .introduce {
-    margin-top: -20rem;
-    padding: 1rem 1rem;
-    box-shadow: none;
-  }
-  .section {
-    margin-top: 3rem;
-  }
   .header-area .main-nav .logo h1 {
     line-height: 100px;
   }
