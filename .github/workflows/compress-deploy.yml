@@ -20,13 +20,18 @@ jobs:
         find . -name "*.css" -exec cleancss -o {} {} \;
         find . -name "*.html" -exec html-minifier --collapse-whitespace --remove-comments -o {} {} \;
 
-    # Optimize Images (lossless or high-quality lossy)
+    # Compress Images (High Quality)
     - name: Compress Images (High Quality)
       run: |
         npm install -g imagemin-cli imagemin-mozjpeg imagemin-pngquant
-        find . -type f -iname "*.jpg" -exec imagemin {} --plugin=mozjpeg --quality=85 --out-dir=$(dirname {}) \;
-        find . -type f -iname "*.jpeg" -exec imagemin {} --plugin=mozjpeg --quality=85 --out-dir=$(dirname {}) \;
-        find . -type f -iname "*.png" -exec imagemin {} --plugin=pngquant --quality=80-100 --out-dir=$(dirname {}) \;
+        find . -type f \( -iname "*.jpg" -o -iname "*.jpeg" \) | while read -r file; do
+          imagemin "$file" --plugin=mozjpeg --quality=85 > "$file.min"
+          mv "$file.min" "$file"
+        done
+        find . -type f -iname "*.png" | while read -r file; do
+          imagemin "$file" --plugin=pngquant --quality=80-100 > "$file.min"
+          mv "$file.min" "$file"
+        done
 
     # Compress Videos (High Quality)
     - name: Compress Videos (High Quality)
