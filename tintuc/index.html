@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+    <title>Agronexus Capital - Tin tức</title>
+    <meta name="description" content="Agronexus Capital - Tin tức" />
+    <link rel="shortcut icon" href="../images/logo/chuuuu z.png" type="image/png" />
+    <link rel="icon" href="../images/logo/chuuuu z.png" type="image/png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/font-awesome.min.css">
+    <link rel='stylesheet'
+    href='https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+    <link rel='stylesheet'
+        href='https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+
+    <link rel="stylesheet" href="../css/animate.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../css/templatemo-style.css">
+    <link rel="stylesheet" href="../css/custom.css">
+    <link rel="stylesheet" href="../css/blog.css">
+</head>
+
+<body>
+    <section class="preloader">
+        <div class="spinner">
+
+            <span class="spinner-rotate"></span>
+
+        </div>
+    </section>
+
+    <!-- Nút Scroll‑to‑Top -->
+    <a href="#" id="back-to-top" aria-label="Back to top" class="hidden md:flex text-[1.5rem] md:text-[2rem] cursor-pointer fixed bottom-[2%] right-[2%] z-50 h-[4rem] md:h-[6rem] w-[4rem] md:w-[6rem] rounded-full
+    bg-white text-black hover:bg-green-900 hover:text-white shadow-[0px_0px_10px_rgba(0,_0,_0,_0.3)]
+    transition-all duration-500
+    items-center justify-center">
+        <i class="fi fi-rr-play leading-[5px] -rotate-90"></i>
+    </a>
+
+    <section class="navbar custom-navbar navbar-fixed-top" role="navigation">
+        <div class="container">
+
+            <div class="navbar-header">
+                <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon icon-bar"></span>
+                    <span class="icon icon-bar"></span>
+                    <span class="icon icon-bar"></span>
+                </button>
+
+                <!-- lOGO TEXT HERE -->
+                <a href="" class="navbar-brand"><img src="../images/logo/logo.svg" alt=""></a>
+            </div>
+
+            <!-- MENU LINKS -->
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-nav-first">
+                    <li class="group"><a href="/">Trang chủ</a>
+                        <span
+                            class="hidden lg:block absolute left-0 w-0 h-[3px] bg-green-700 transition-all duration-300 group-hover:w-full"></span>
+                    </li>
+                    <li class="group">
+                        <a href="/vechungtoi">Về chúng tôi</a>
+                        <span
+                            class="hidden lg:block absolute left-0 w-0 h-[3px] bg-green-700 transition-all duration-300 group-hover:w-full"></span>
+                    </li>
+                    <li class="group"><a href="/nghanhhangdautu">Ngành hàng đầu tư</a>
+                        <span
+                            class="hidden lg:block absolute left-0 w-0 h-[3px] bg-green-700 transition-all duration-300 group-hover:w-full"></span>
+                    </li>
+                    <li class="group"><a href="/phattrienbenvung/">Phát triển bền vững</a>
+                        <span
+                            class="hidden lg:block absolute left-0 w-0 h-[3px] bg-green-700 transition-all duration-300 group-hover:w-full"></span>
+                    </li>
+                    <li id="menu-hover" class="group"><a href="/tintuc/">Tin tức</a>
+                        <span
+                            class="hidden lg:block absolute left-0 h-[3px] bg-green-700 w-full transition-all duration-300"></span>
+                    </li>
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <a href="/lienhe" class="section-btn">Liên hệ</a>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+    <section
+        style="background-image: url(../images/tieuchiesg/xecongnong.jpg); background-size: cover; position: relative; background-position: center;"
+        class="w-full flex flex-col justify-end h-[60rem] bg-green-800 flex">
+        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.3);"></div>
+    </section>
+
+    <div id="blog" class="our-blog mt-[6rem] mb-0">
+        <div class="container">
+            <h2 class="text-[3rem] text-center mb-8">Tin tức nổi bật</h2>
+            <div id="FeaturedNews" class="row">
+
+            </div>
+        </div>
+    </div>
+
+    <section>
+        <div class="container">
+            <h1 class="text-[3rem] text-center mb-12">Danh mục tin tức</h1>
+            <div class="flex flex-col lg:flex-row lg:space-x-16">
+                <!-- Left side: Search, filter, news list -->
+                <div class="w-ful lg:w-[70%]">
+                    <div class="h-[4rem] flex space-x-4 mb-10 w-full justify-between">
+                        <div class="w-[70%] h-full flex items-center border border-gray-300 rounded-full px-8 py-2">
+                            <input id="search-news"
+                                class="h-full flex-grow outline-none text-gray-700 placeholder-gray-700 text-[16px] placeholder:text-[16px]"
+                                placeholder="Nhập từ khoá" type="text" />
+                            <button class="h-full text-green-600 ml-2">
+                                <i class="fi fi-rr-search"></i>
+                            </button>
+                        </div>
+                        <select id="sortnewslist" aria-label="Sort news"
+                            class="border border-gray-300 rounded-full text-gray-700 px-8 py-2 cursor-pointer">
+                            <option value="desc">
+                                Mới nhất
+                            </option>
+                            <option value="asc">
+                                Cũ nhất
+                            </option>
+                        </select>
+                    </div>
+                    <div
+                        class="loctintuc flex flex-col md:flex-row justify-center md:space-x-10 space-y-4 md:space-y-0 mb-[6rem]">
+                        <button id="tatca"
+                            class="w-full text-[1.5rem] bg-white text-gray-800 border border-gray-300 py-2 md:w-[12rem] rounded-full hover:bg-[#364a3d] hover:text-white transition duration-500 active">
+                            Tất cả
+                        </button>
+                        <button id="nongnghiep"
+                            class="w-full text-[1.5rem] bg-white text-gray-800 border border-gray-300 py-2 md:w-[12rem] rounded-full hover:bg-[#364a3d] hover:text-white transition duration-500">
+                            Nông nghiệp
+                        </button>
+                        <button id="nangluong"
+                            class="w-full text-[1.5rem] bg-white text-gray-800 border border-gray-300 py-2 md:w-[12rem] rounded-full hover:bg-[#364a3d] hover:text-white transition duration-500">
+                            Năng lượng
+                        </button>
+                        <button id="khoangsan"
+                            class="w-full text-[1.5rem] bg-white text-gray-800 border border-gray-300 py-2 md:w-[12rem] rounded-full hover:bg-[#364a3d] hover:text-white transition duration-500">
+                            Khoáng sản
+                        </button>
+                        <button id="thuysan"
+                            class="w-full text-[1.5rem] bg-white text-gray-800 border border-gray-300 py-2 md:w-[12rem] rounded-full hover:bg-[#364a3d] hover:text-white transition duration-500">
+                            Thủy sản
+                        </button>
+                        <button id="noibo"
+                            class="w-full text-[1.5rem] bg-white text-gray-800 border border-gray-300 py-2 md:w-[12rem] rounded-full hover:bg-[#364a3d] hover:text-white transition duration-500">
+                            Nội bộ
+                        </button>
+                    </div>
+                    <div id="ListNews" class="mb-12">
+
+                    </div>
+                    <nav id="PaginationNews" aria-label="Pagination"
+                        class="PaginationNews flex justify-center space-x-4">
+                        <button
+                            class="w-[4rem] h-[4rem] flex justify-center items-center rounded-full border border-gray-300 text-gray-800 hover:bg-[#364a3d] hover:text-white transition duration-500"
+                            aria-label="Previous">
+                            <i class="fi fi-rr-angle-left"></i>
+                        </button>
+                        <button id="page1"
+                            class="w-[4rem] h-[4rem] flex justify-center items-center rounded-full border border-gray-300 text-gray-300 cursor-not-allowed active"
+                            disabled>
+                            1
+                        </button>
+                        <button id="page2"
+                            class="w-[4rem] h-[4rem] flex justify-center items-center rounded-full border border-gray-300 text-gray-300 cursor-not-allowed"
+                            disabled>
+                            2
+                        </button>
+                        <button id="page3"
+                            class="w-[4rem] h-[4rem] flex justify-center items-center rounded-full border border-gray-300 text-gray-300 cursor-not-allowed"
+                            disabled>
+                            3
+                        </button>
+                        <button id="page4"
+                            class="w-[4rem] h-[4rem] flex justify-center items-center rounded-full border border-gray-300 text-gray-300 cursor-not-allowed"
+                            disabled>
+                            4
+                        </button>
+                        <button id="page5"
+                            class="w-[4rem] h-[4rem] flex justify-center items-center rounded-full border border-gray-300 text-gray-300 cursor-not-allowed"
+                            disabled>
+                            5
+                        </button>
+                        <button
+                            class="w-[4rem] h-[4rem] flex justify-center items-center rounded-full border border-gray-300 text-gray-800 hover:bg-[#364a3d] hover:text-white transition duration-500"
+                            aria-label="Next">
+                            <i class="fi fi-rr-angle-right"></i>
+                        </button>
+                    </nav>
+                </div>
+                <!-- Right side: Large image -->
+                <div class="hidden lg:block w-[30%] relative">
+                    <div class="sticky top-[100px] bottom-[120px] self-start">
+                        <img alt="Tall Capital Building with glass facade and green promotional banners at entrance"
+                            class="rounded-2xl w-full h-[55rem] object-cover" height="600"
+                            src="../images/gioithieu/limtower.png" width="400" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="footer" class="bg-[#364a3d]" data-stellar-background-ratio="0.5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-8">
+                    <div class="footer-info pl-[20%] lg:pl-0">
+                        <div class="section-title">
+                            <h2 class="wow fadeInUp text-white" data-wow-delay="0.2s">Địa chỉ</h2>
+                        </div>
+                        <address class="wow fadeInUp" data-wow-delay="0.4s">
+                            <img class="w-[170px] mb-4" src="../images/logo/logonentrang.png" alt="">
+                            <p class="text-white">Lim Tower Building,<br>9-11 Tôn Đức Thắng,<br> Phường Bến
+                                Nghé,<br>Quận 1, Tp Hồ Chí
+                                Minh</p>
+                        </address>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-8">
+                    <div class="footer-info pl-[20%] lg:pl-0">
+                        <div class="section-title">
+                            <h2 class="wow fadeInUp text-white" data-wow-delay="0.2s">Liên hệ</h2>
+                        </div>
+                        <address class="wow fadeInUp" data-wow-delay="0.4s">
+                            <p class="text-white">(+84) 398 388 109</p>
+                            <p><a class="text-white"
+                                    href="mailto:info@agronexuscapital.com">info@agronexuscapital.com</a></p>
+                        </address>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-4">
+                    <ul class="wow fadeInUp social-icon pl-[20%] lg:pl-0" data-wow-delay="0.4s">
+                        <li><a href="#" class="fa fa-facebook-square" attr="facebook icon"></a></li>
+                        <li><a href="#" class="fa fa-twitter"></a></li>
+                        <li><a href="#" class="fa fa-instagram"></a></li>
+                        <li><a href="#" class="fa fa-google"></a></li>
+                    </ul>
+
+                    <div class="wow fadeInUp copyright-text pl-[20%] lg:pl-0" data-wow-delay="0.8s">
+                        <p class="text-white">Copyright &copy; 2025 <br>AgroNexus Capital
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-4">
+                    <ul class="wow fadeInUp text-[16px] pl-[20%] lg:pl-0 mt-[20px] mb-3" data-wow-delay="1s">
+                        <li class="mb-3"><a class="text-white group relative inline-block" href="#">Trang chủ<span
+                                    class="absolute left-0 bottom-0 w-0 h-[3px] bg-white transition-all duration-300 group-hover:w-full"></span></a>
+                        </li>
+                        <li class="mb-3"><a class="text-white group relative inline-block" href="#vechungtoi">Về chúng
+                                tôi<span
+                                    class="absolute left-0 bottom-0 w-0 h-[3px] bg-white transition-all duration-300 group-hover:w-full"></span></a>
+                        </li>
+                        <li class="mb-3"><a class="text-white group relative inline-block" href="#nghanhhangdautu">Ngành
+                                hàng đầu
+                                tư<span
+                                    class="absolute left-0 bottom-0 w-0 h-[3px] bg-white transition-all duration-300 group-hover:w-full"></span></a>
+                        </li>
+                        <li class="mb-3"><a class="text-white group relative inline-block" href="">Phát triển bền
+                                vững<span
+                                    class="absolute left-0 bottom-0 w-0 h-[3px] bg-white transition-all duration-300 group-hover:w-full"></span></a>
+                        </li>
+                        <li class="mb-3"><a class="text-white group relative inline-block" href="#blog">Tin tức<span
+                                    class="absolute left-0 bottom-0 w-0 h-[3px] bg-white transition-all duration-300 group-hover:w-full"></span></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        </div>
+    </footer>
+
+    <script src="../js/jquery.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/wow.min.js"></script>
+    <script src="../js/custom.js"></script>
+    <script src="../js/hovermenu.js"></script>
+    <script src="../js/tintuc.js"></script>
+</body>
+
+</html>
